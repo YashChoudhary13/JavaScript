@@ -71,3 +71,12 @@ console.log(courseInstructor)
 
 //APIs
 //Jab bhi apna kaam kisi aur ke upar dalte hai
+// API return is recieved in JSON
+//JSON is basically object with keys in " " and unlike objects it does not have name
+// {
+//     "name" : "Yash",
+//     "age" : 21,
+//     "bored" : true
+// }
+// How to use fetch in API calls, basically you go to api calls and convert the JSON to object and get values
+//JSON can be obtained as arrays containing objects too
