@@ -24,3 +24,50 @@ console.log(jsUser.greeting()) //To access our function of object, remember whil
 jsUser.greeting2 = function(){
     console.log(`Hello JS User, ${this.name}`) //this is used to reference the same object
 }
+
+// ************************************ SINGLETON / DECLARE USING CONSTRUCTOR *********************************************
+const appUser = new Object()
+appUser.id = "123abc"
+appUser.name = "Yash"
+appUser.isLoggedIn = false
+console.log(appUser)
+
+const regularUser = {
+    email : "yashchoudhary13@outlook.com",
+    fullName : {
+        username : {
+            firstName : "Yash",
+            lastName : "Choudhary"
+        }
+    }
+}
+console.log(regularUser.fullName.username.firstName)
+console.log(regularUser.fullName?.username.lastName) // We can write a ? in front of fullName to tell the code to proceed only if fullName exists or else stop
+const obj1 = {
+    1 : 'a',
+    2 : 'b',
+    3 : 'c'
+}
+const obj2 = {
+    4 : 'a',
+    5 : 'b',
+    6 : 'c'
+}
+const obj3 = Object.assign(obj1, obj2) //Returns an object having both objects combined but the recommended way to write is:
+const obj4 = Object.assign({} , obj1 , obj2) //{} is a target and obj1, obj2 are source from which we create target. !GOOD PRACTICE
+const obj5 = {...obj1, ...obj2} //Uses spread operator to combine two objects, best to use
+console.log(Object.keys(appUser)) //Returns array of keys of object appUser, to return values we use Object.values(appUser)
+console.log(appUser.hasOwnProperty('isLoggedIn')) //Returns true or false depending on if appUser has isLoggedIn property or not
+
+//DESTRUCTURING OBJECTS
+const course = {
+    courseName : "JS",
+    price : 999,
+    courseInstructor : "Hitesh"
+}
+//If we have to print some key again and again :
+const{courseInstructor : instructor} = course //now we can access courseInstructor/instructor directly
+console.log(courseInstructor)
+
+//APIs
+//Jab bhi apna kaam kisi aur ke upar dalte hai
