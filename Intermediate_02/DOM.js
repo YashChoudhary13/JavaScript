@@ -1,5 +1,5 @@
 /**
- * This script demonstrates basic DOM manipulation techniques in JavaScript.
+ * This script demonstrates basic DOM manipulation techniques in JavaScript.     DOCUMENT OBJECT MODEL (DOM)
  * 
  * Flowchart of DOM Structure:
  * 
