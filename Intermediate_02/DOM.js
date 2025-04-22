@@ -46,6 +46,3 @@ button.addEventListener('click', () => {
 heading.style.color = 'blue';
 heading.style.fontSize = '2rem';
 
-
-
-// DOM can access elements using various selectors and modify them directly from JS file to HTML
