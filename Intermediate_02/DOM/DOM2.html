@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-family: Arial, sans-serif; text-align: center; padding: 20px;">
+    <h1>DOM Manipulation Example</h1>
+    <p id="demo">This is a demonstration of DOM manipulation.</p>
+    <button id="myButton">Click me!</button>
+    <br>
+    <br>
+    <br>
+
+    <script>
+        document.getElementById("myButton").addEventListener("click", function() {
+            document.getElementById("demo").innerHTML = "Hello World!";
+        });
+        const div = document.createElement("div");
+        div.className = "main"; // Adding a class to the div
+        div.id = Math.round(Math.random() * 10 + 1); // Adding an ID to the div
+        div.setAttribute("title", "This is a title"); // Adding a title attribute to the div
+        // div.setAttribute is the recommended way to set attributes in the DOM eventhough we have className and id properties
+        // since setAttribute method is less time complex than using className and id properties
+        div.setAttribute("style" , "color:#fff;background-color:#212121") // Setting the background color of the div
+        //div.innerText = "Yash Choudhary"; // Setting the text inside the div
+        const addText = document.createTextNode("This is a text node"); // Creating a text node, this is a text node that can be added to the div
+        div.appendChild(addText); // Appending the text node to the div
+        // In .innerText we get the text inside the div then set it, while in createTextNode we create a text node and then append
+        // it to the div, directly setting it instead of making a round trip. But BOTH ARE VALID WAYS TO DO IT.
+
+
+        // THIS DIV IS NOT APPENDED TO THE DOM YET, IT IS CREATED INSIDE THE MEMORY BUT NOT YET APPEARED ON PAGE, WE NEED TO ATTACT IT TO DOCUMENT
+        document.body.appendChild(div); // Appending the div to the body of the document, this will make it appear on the page  
+
+
+    </script>
+    
+</body>
+</html>

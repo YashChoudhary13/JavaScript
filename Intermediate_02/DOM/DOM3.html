@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Part 3</title>
+</head>
+<body style="background-color: #212121; color: #fff; font-family: Arial, sans-serif; text-align: center; padding: 20px;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+    <script>
+        // Add another list item to the ul with class language
+        function addLanguage(langName){
+            const li = document.createElement('li');
+            li.innerHTML = `${langName}`;
+            document.querySelector('.language').appendChild(li);
+            // Problem in this method is everytime we need to traverse the tree to add a child node.
+        }
+        addLanguage('Python');
+
+        function addOptimisedLanguage(langName){
+            const li = document.createElement('li');
+            li.appendChild(document.createTextNode(langName));
+            document.querySelector('.language').appendChild(li);
+            // This method is more optimised as we are not traversing the tree to add a child node.
+        }
+        addOptimisedLanguage('Java');
+        // EDIT
+        document.querySelector('li:nth-child(2)').innerHTML = 'Java (Edited)'; // Edit the second list item
+        //OR
+        const newli = document.createElement('li');
+        newli.innerHTML = 'Java (Edited using new element)'; // Create a new list item with the same content
+        //document.querySelector('.language').replaceChild(newli, document.querySelector('li:nth-child(2)')); // Replace the second list item with the new one
+        document.querySelector('li:nth-child(2)').replaceWith(newli); // Replace the second list item with the new one
+        //OR
+        //document.querySelector(li:first-child).outerHTML = "<li>Edited using outerHTML, which is not recommended</li>"; // Replace the first list item with the new one using outerHTML
+        // REMOVE
+        document.querySelector('li:last-child').remove(); // Remove the last list item
+    
+    
+    </script>
+</body>
+</html>

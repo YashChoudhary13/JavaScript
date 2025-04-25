@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Yash Choudhary</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+    <script>
+        // JS is synchronous and single threaded
+        // each operation wait for last one to complete before executing
+        // Two types of code is written in JS, Blocking code and Non Blocking code
+        // Blocking Code - Block the flow of the Program, Read File Sync
+        // Non Blocking Code - Does not block execution, Read File Async
+        // What is good depends on the usecase, for example if you do write file in DBMS of user registration and error occurs but you have already sent user registration success, so blocking code is good here
+        // In the event loop   , there is 3 parts : JAVASCRIPT ENGINE - Memory heap and Call Stack
+        //                                          Web API - DOM API, fetch() , set timeOut, set interval requests sends calls to register call back which after the specified interval sends the call request to next stage
+        //                                          Task Queue - All CB from Register is sent here and from here it is sent to call stack of JS Engine again to be executed
+        //                                          Promise Queue - A high priority queue which takes CB from fetch() in form of promise
+        // setTimeout(function(){}, time in ms) , Executes only once. When passing function instead of defining, we pass function reference not execution, i.e with () in the end.
+        // clearTimeout(reference to setTimeout() where you want to clear the timeout), this is generally used along with events
+        const changeText = function(){document.querySelector('h1').innerHTML = "You are doing great, maybe not so great but keep going."}
+        let changeInterval = setTimeout(changeText, 2000)
+        document.querySelector('#stop').addEventListener('click' , function(){
+            clearTimeout(changeInterval);
+        })
+        // setInterval(function(){} , time in ms) ,, this keeps executing in every (time)ms until we use clearInterval
+        
+    </script>
+</body>
+</html>
