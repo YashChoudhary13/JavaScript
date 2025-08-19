@@ -51,10 +51,10 @@ console.log(2 < 1) // Lesser than
 console.log(2 == 1) // Comparision if they both are equal, single equal would be assigning the value while double equal compares
 console.log(2 != 1) // Comparision if they are not equal to each other
 
-console.log("2" > 1) // true
-console.log(null > 0) // false
-console.log(null == 0) // false
-console.log(null >= 0) // true
+console.log("2" > 1) // true  In relational comparisons (<, >, <=, >=), JS first converts strings → numbers.
+console.log(null > 0) // false 
+console.log(null == 0) // false == (loose equality) does not convert null into a number. Rule: null is only loosely equal to undefined (not to 0 or any number).
+console.log(null >= 0) // true Again, relational comparison → convert null to number. Number(null) → 0.
 // AVOID SUCH CONVERSIONS AND COMPARISIONS
 // Comparisions convert null to a Number, treating it as 0
 
