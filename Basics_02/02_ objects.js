@@ -67,7 +67,9 @@ const course = {
 }
 //If we have to print some key again and again :
 const{courseInstructor : instructor} = course //now we can access courseInstructor/instructor directly
-console.log(courseInstructor)
+/* "Take the property courseInstructor from course
+and store it in a new variable named instructor." */
+console.log(instructor) // returns course.courseInstructor which is "Hitesh"
 
 //APIs
 //Jab bhi apna kaam kisi aur ke upar dalte hai
