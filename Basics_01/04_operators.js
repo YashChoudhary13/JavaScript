@@ -29,6 +29,7 @@ console.log(1 + 2 + "2")
 
 console.log(3 + 4 * 5 % 3) // Bad code, use parantheses ( ) to be more clear
 
+// Normally we think of + as addition, but when used unary (with just one operand), it tries to convert its operand into a number.
 console.log(+true) // 1
 console.log(+"") // 0. NOT RECOMMENDED TO DO THESE 25-26
 //console.log(true+) // syntax ERROR
