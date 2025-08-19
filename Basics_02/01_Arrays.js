@@ -12,7 +12,7 @@ myArr.includes(1) //returns true since one exists in myArr
 myArr.indexOf(9) //returns -1 since 9 is not there in myArr, otherwise it returns index of the element
 const newArr = myArr.join() //returns array in string => 1, 2, 3, 4, 5
 // SLICE , SPLICE
-console.log("A " , myArr)
+console.log("A " , myArr) // A  [ 1, 2, 3, 4 ]
 const myNewArr1 = myArr.slice(1,3) //Returns new array with elements from 1 to 2, does not include 3
 const myNewArr2 = myArr.splice(1,3) //Returns part of array, removing the elements from existing array
 const marvelHeroes = ["thor" , "ironman" , "spiderman"]
