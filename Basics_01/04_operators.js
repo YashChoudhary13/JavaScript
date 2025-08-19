@@ -15,10 +15,17 @@ let str1 = "Hello"
 let str2 = " Yash"
 let str3 = str1 + str2 //Hello Yash
 
+/* If both operands are numbers, it does numeric addition.
+If at least one operand is a string, it does string concatenation.
+The evaluation goes from left to right (since + is left-to-right associative). */
 console.log("1" + 2) // 12
 console.log(1 + "2") // 3
 console.log("1" + 2 + 2) //122
-console.log(1 + 2 + "2") //5
+console.log(1 + 2 + "2") 
+// Left to right:
+// 1 + 2 → 3 (number addition)
+// 3 + "2" → "32"
+
 
 console.log(3 + 4 * 5 % 3) // Bad code, use parantheses ( ) to be more clear
 
