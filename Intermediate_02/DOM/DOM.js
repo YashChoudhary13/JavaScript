@@ -70,8 +70,8 @@ document.querySelectorAll('h1'); // Selects all <h1> elements in the document
 document.querySelector('.heading'); // Selects the first element with the class "heading"
 document.querySelector('#title'); // Selects the element with the ID "title"
 document.querySelector('div > p'); // Selects the first <p> element that is a direct child of a <div> element
-document.querySelector('div p'); // Selects the first <p> element that is a descendant of a <div> element
-document.querySelector('div + p'); // Selects the first <p> element that is immediately preceded by a <div> element
+document.querySelector('div p'); // Selects the first <p> element that is a descendant of a <div> element - Selects the first <p> anywhere inside a <div> (child, grandchild, etc).
+document.querySelector('div + p'); // Selects the first <p> element that is immediately preceded by a <div> element (siblings)
 document.querySelector('div ~ p'); // Selects all <p> elements that are preceded by a <div> element
 document.querySelector('div[attribute="value"]'); // Selects the first <div> element with a specific attribute and value
 document.querySelector('div[attribute^="value"]'); // Selects the first <div> element with an attribute that starts with a specific value
