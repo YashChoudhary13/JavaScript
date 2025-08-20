@@ -23,9 +23,21 @@
             const li = document.createElement('li');
             li.appendChild(document.createTextNode(langName));
             document.querySelector('.language').appendChild(li);
-            // This method is more optimised as we are not traversing the tree to add a child node.
+            // This method is more optimised as we are not removing the childs of the element and then adding text node, instead we create one and add directly
+            // innerText is slower than textContent since innerText need to compute what is visible while textContent retrieves all text node not caring about its CSS whether display is none or visibility is hidden
         }
         addOptimisedLanguage('Java');
+
+        // TRUE OPTIMISATION, AVOIDS REPEATED TREE TRAVERSAL
+        const ul = document.querySelector('.language');
+        function mostAddOptimisedLanguage(langName){
+            const li = document.createElement('li');
+            li.appendChild(document.createTextNode(langName));
+            ul.appendChild(li);   // ✅ no repeated DOM traversal
+        }
+
+
+        
         // EDIT
         document.querySelector('li:nth-child(2)').innerHTML = 'Java (Edited)'; // Edit the second list item
         //OR
@@ -37,8 +49,29 @@
         //document.querySelector(li:first-child).outerHTML = "<li>Edited using outerHTML, which is not recommended</li>"; // Replace the first list item with the new one using outerHTML
         // REMOVE
         document.querySelector('li:last-child').remove(); // Remove the last list item
-    
-    
+        // 1. How :nth-child(n) works
+        // It looks at the position of the element among ALL its siblings (not just same tags).
+        // Then it checks if the element at that position also matches the given selector (li in your case).
+        // 🔹 2. How :nth-of-type(n) works
+        // It only looks at siblings of the same tag type.
+        // Then applies the counting on them.
+        /* ➡️ The browser doesn’t need you to explicitly write the parent.
+                Instead, it goes like this:
+                
+                Start scanning the DOM from the top.
+                
+                Every time it encounters an <li>, it asks:
+                
+                "Are you the 2nd child of your parent?"
+                
+                If yes → that <li> matches.
+                
+                Stop at the first match (because it’s querySelector, not querySelectorAll).
+                
+                So the “parent” is implicitly the parent of the <li> being tested.
+                You don’t provide the parent manually — CSS selectors are evaluated relative to each candidate element and its parent.
+
+*/
     </script>
 </body>
 </html>
