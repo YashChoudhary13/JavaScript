@@ -5,7 +5,9 @@ function chai(){
     console.log("DB Connected")
 }
 chai()
-
+// This is how we normally do function call, and these functions are hoisted since its a function declaration but in case we want a function to be executed immediately
+// then we invoke IIFE, which converts the declaration into expression by adding () and then executes it immediately by adding another () in the end
+    
 //To invoke IIFE in the function above, we do:
 (function chai(){
     console.log("DB Connected")
